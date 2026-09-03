@@ -10,8 +10,8 @@ pipeline {
 
         stage('Compile Project') {
             steps {
-                // Using standard maven command syntax directly
-                sh 'mvn clean compile'
+                // Changed from 'sh' to 'bat' for Windows environment compatibility
+                bat 'mvn clean compile'
             }
         }
     }
