@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven3' // This tells Jenkins to load the tool we configured
+    }
+
     stages {
         stage('Checkout Source') {
             steps {
@@ -10,7 +14,6 @@ pipeline {
 
         stage('Compile Project') {
             steps {
-                // Changed from 'sh' to 'bat' for Windows environment compatibility
                 bat 'mvn clean compile'
             }
         }
